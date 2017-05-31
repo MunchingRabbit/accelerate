@@ -1,0 +1,23 @@
+<!--Accelerate v1.0 (Alice) Header-->
+<div class="w3-panel w3-light-gray w3-round-xlarge">
+	<h1 class="w3-center">ACCELERATE</h1>
+	<h3 class="w3-center">MyEAN boilerplate release 1.0 (Alice)</h3>
+</div>
+<div class="w3-panel w3-red w3-round-xlarge" *ngIf="err">{{err}}</div>
+<div class="w3-padding">
+	<label><strong>User Name</strong></label>
+	<input #username class="w3-input w3-border" type="text" style="margin-bottom:5px;">
+	<label><strong>Password</strong></label>
+	<input #pwd class="w3-input w3-border" type="password" style="margin-bottom:5px;">
+	<label *ngIf="state"><strong>Re-type password</strong></label>
+	<input class="w3-input w3-border" type="password" style="margin-bottom:5px;" *ngIf="state" [(ngModel)]="check">
+	<div class="w3-center" *ngIf="state" >
+		<button class="w3-button w3-black w3-hover-blue w3-round-xlarge" 
+			(click)="onClick($event, username, pwd)">Signup</button>
+	</div>
+	<div class="w3-center" *ngIf="!state" >
+		<button class="w3-button w3-black w3-hover-green w3-round-xlarge" 
+			(click)="onClick($event, username, pwd)">Login</button>
+	</div>
+</div>
+<!--Accelerate v1.0 (Alice) Footer-->

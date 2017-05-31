@@ -1,0 +1,58 @@
+<!--Accelerate v1.0 (Alice) Header-->
+<div class="w3-container w3-light-blue w3-card-4 w3-round-large">
+	<h1>Accelerate Table Builder</h1>
+</div>
+<div class="w3-container">
+	<h2>Create a table named:</h2>
+	<input class="w3-input w3-border" style="text-transform:uppercase" type="text" [(ngModel)]="table_name">
+	<h3 class="w3-left"> which has </h3>
+	<input class="w3-input w3-border" type="number" min="1" max="25" [(ngModel)]="number_of_columns" (input)="columnChanged($event)">
+	<span *ngIf="number_of_columns===1"> column</span>
+	<span *ngIf="number_of_columns>1"> columns</span>
+</div>
+<div class="w3-container w3-sand w3-card-4 w3-margin-top">
+	<h4>TABLE COLUMNS</h4>
+</div>
+<ng-template ngFor let-column [ngForOf]="columns" let-x="index">
+<div class="w3-container w3-row w3-card-4 w3-round-large w3-padding">
+	<div class="w3-jumbo w3-center w3-col w3-mobile" style="width:50px;">{{x+1}}</div>
+	<div class="w3-container w3-rest w3-mobile">
+		<div class="w3-cell-row">
+			<div class="w3-half w3-cell w3-padding">
+				<label class="w3-left w3-large">Column name:</label>
+				<input class="w3-input w3-border" style="text-transform:uppercase" type="text" [(ngModel)]="column.name"/>
+				<p><input class="w3-check w3-border" type="checkbox" [(ngModel)]="column.notNull"/> NOT NULL</p>
+				<p><input class="w3-check" type="checkbox" [(ngModel)]="column.isPrimaryKey"/> PRIMARY KEY</p>
+			</div>
+			<div class="w3-half w3-cell w3-padding">
+				<label class="w3-left w3-large">Datatype:</label>
+				<select class="w3-select w3-border" [(ngModel)]="column.datatype">
+					<option *ngFor="let options of datatype_list; let y=index" value="{{y}}">{{options}}</option>
+				</select>
+				<p><input class="w3-check" type="checkbox" [(ngModel)]="column.isForeignKey"/> FOREIGN KEY</p>
+				<select class="w3-select w3-border" *ngIf="column.isForeignKey" [(ngModel)]="column.foreignTable">
+					<option *ngFor="let options of resolved.contents">{{options}}</option>
+				</select>
+				<p><input class="w3-check" type="checkbox" [(ngModel)]="column.isUnique"/> UNIQUE</p>
+			</div>
+		</div>
+		<div class="w3-cell-row">
+			<div class="w3-half w3-cell w3-padding">
+				<p><input class="w3-check" type="checkbox" [(ngModel)]="column.hasCheck"/> CHECK</p>
+				<input class="w3-input w3-border" style="text-transform:uppercase" type="text" *ngIf="column.hasCheck" [(ngModel)]="column.check"/>
+			</div>
+			<div class="w3-half w3-cell w3-padding">
+				<p><input class="w3-check" type="checkbox" [(ngModel)]="column.hasDefault"/> DEFAULT</p>
+				<input class="w3-input w3-border" style="text-transform:uppercase" type="text" *ngIf="column.hasDefault" [(ngModel)]="column.defaultvalue"/>
+			</div>
+		</div>
+	</div>
+</div>
+</ng-template>
+<div class="w3-container w3-padding w3-mobile">
+	<button class=" w3-mobile w3-btn w3-large w3-round-large w3-black w3-hover-green"
+		(click)="onDone($event)">Save</button>
+	<button class=" w3-mobile w3-btn w3-large w3-round-large w3-black w3-hover-red"
+		(click)="onClick($event)">Cancel</button>
+</div>
+<!--Accelerate v1.0 (Alice) Footer-->

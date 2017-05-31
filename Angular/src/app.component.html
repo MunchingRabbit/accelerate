@@ -1,0 +1,19 @@
+<!--Accelerate v1.0 (Alice) Header-->
+<div *ngIf="title" class="w3-bar w3-black">
+	<a href="" class="w3-bar-item w3-button">Accelerate</a>
+	<div class="w3-dropdown-hover">
+		<button class="w3-button">Tables</button>
+		<div class="w3-dropdown-content w3-bar-block w3-card">
+			<a class="w3-bar-item w3-button" *ngFor="let list of dropdownlist" (click)="onRoute($event,list.url)">{{list.title}}</a>
+		</div>
+	</div>
+	<div class="w3-dropdown-hover w3-right">
+		<button class="w3-button">{{title}}</button>
+		<div class="w3-dropdown-content w3-bar-block w3-card" style="right:0">
+			<a class="w3-bar-item w3-button" (click)="onClick($event)">Logout</a>
+			<a class="w3-bar-item w3-button" (click)="onClick($event)">Delete Account</a>
+		</div>
+	</div>
+</div>
+<router-outlet></router-outlet>
+<!--Accelerate v1.0 (Alice) Footer-->

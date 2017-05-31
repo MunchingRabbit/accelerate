@@ -1,0 +1,95 @@
+<!--Accelerate v1.0 (Alice) Header-->
+<div class="w3-container">
+	<h1 class="w3-left">{{packet.table}}</h1>
+	<div class="w3-container w3-left w3-padding-16 w3-mobile">
+		<button class=" w3-mobile w3-btn w3-large w3-round-large w3-black w3-hover-green"
+			(click)="onAdd($event, {})">+</button>
+	</div>
+</div>
+<div class="w3-row-padding">
+	<div class="w3-quarter w3-section"
+		*ngFor="let items of packet.contents">
+		<div class="w3-round-large w3-pale-blue w3-display-container w3-opacity-min w3-hover-opacity-off w3-hover-shadow">
+			<ng-template ngFor let-columns [ngForOf]="packet.model">
+				<ng-template [ngIf]="columns.editable===true">
+					<label class="w3-tag">{{columns.name}}</label>
+					<div class="w3-margin-right w3-margin-bottom">{{items[columns.name]}}</div>
+				</ng-template>
+			</ng-template>
+			<div class="w3-display-hover w3-display-topright">
+				<div class="w3-animate-opacity">
+					<div class="w3-dropdown-hover w3-round-large">
+						<button class="w3-btn w3-round-large w3-black w3-hover-aqua">&#x21E9;</button>
+						<div class="w3-dropdown-content w3-bar-block">
+							<ng-template ngFor let-cols [ngForOf]="packet.model" let-i="index">
+								<ng-template [ngIf]="cols.type==='FILE'">
+									<a href="{{pageurl}}/files/uploads/{{items[cols.name]}}" 
+										class="w3-bar-item w3-btn w3-black" download>{{items[cols.name]}}</a>
+								</ng-template>
+							</ng-template>
+						</div>
+					</div>
+					<button class="w3-btn w3-round-large w3-black w3-hover-blue" (click)="onEdit($event, items)">&#9881;</button>
+					<button class="w3-btn w3-round-large w3-black w3-hover-red" (click)="onDelete($event, items)">&times;</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="_editor" class="w3-modal">
+    <div class="w3-container w3-modal-content w3-card-4 w3-animate-top" style="max-width:488px">
+		<div class="w3-bar"><div class="w3-left"><h2 class="w3-panel w3-center">{{title}}</h2></div>
+			<span (click)="onClick($event, false)" class="w3-btn w3-hover-red w3-right">&times;</span>
+		</div>
+		<form class="w3-container" *ngIf="edit=='';then _form else _warn">
+			<!--ALLAN HOO WAS HERE =P -->
+		</form>
+		<ng-template #_warn>
+			<div class="w3-panel w3-red">
+				<h4>Please confirm the removal of {{edit}}</h4>
+			</div>
+		</ng-template>
+		<ng-template #_form>
+			<ng-template ngFor let-columns [ngForOf]="packet.model" let-i="index">
+				<ng-template [ngIf]="columns.editable===true">
+				<div class="w3-container" [ngSwitch]="columns.type">
+					<label class="w3-tag w3-margin-top">{{columns.name}}</label>
+					
+					<input *ngSwitchCase="'NUMB'" type="number" class="w3-input" min=0 max=100000 
+						[disabled]="(title==='EDIT' && packet.key.indexOf(i)>-1)" [(ngModel)]="data[i]">
+						
+					<div *ngSwitchCase="'FILE'">
+						<label>{{data[i]}}</label>
+						<input type="file" class="w3-input _file-uploader" (click)="onFileClick($event, i)"
+							[disabled]="(title==='EDIT' && packet.key.indexOf(i)>-1)" ng2FileSelect [uploader]="uploader"/>
+					</div>
+					
+					<input *ngSwitchCase="'DTTM'" type="datetime-local" class="w3-input" 
+						[disabled]="(title==='EDIT' && packet.key.indexOf(i)>-1)" [(ngModel)]="data[i]">
+						
+					<select *ngSwitchCase="'DDST'" class="w3-select" 
+						[disabled]="(title==='EDIT' && packet.key.indexOf(i)>-1)" [(ngModel)]="data[i]">
+						<option *ngFor="let selection of columns.list" >{{selection[columns.dependency]}}</option>
+					</select>
+					
+					<select *ngSwitchCase="'DDNM'" class="w3-select" 
+						[disabled]="(title==='EDIT' && packet.key.indexOf(i)>-1)" [(ngModel)]="data[i]">
+						<option *ngFor="let selection of columns.list" >{{selection[columns.dependency]}}</option>
+					</select>
+					
+					<!--INSERT MORE DATATYPES HERE-->
+					<!--**************************-->
+					<input *ngSwitchDefault type="text" class="w3-input" 
+						[disabled]="(title==='EDIT' && packet.key.indexOf(i)>-1)" [(ngModel)]="data[i]">
+					
+				</div>
+				</ng-template>
+			</ng-template>
+		</ng-template>
+		<div class="w3-margin w3-center">
+			<button class="w3-btn w3-round-large w3-black w3-hover-blue" (click)="onDone($event)">OK</button>
+			<button class="w3-btn w3-round-large w3-black w3-hover-red" (click)="onClick($event, false)">Cancel</button>
+		</div>
+    </div>
+</div>
+<!--Accelerate v1.0 (Alice) Footer-->
