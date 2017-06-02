@@ -8,7 +8,7 @@ A MySQL, Express, Angular and Node implementation for developers in a hurry.
 3) Your ideas, i.e. table schemas, column names, etc.
 
 ## Experience level required
--[x] Can setup and install MySQL Database, Node, Express and angular-cli
+- [x] Can setup and install MySQL Database, Node, Express and angular-cli
 
 ## FAQ
 1) What the hell is this?
