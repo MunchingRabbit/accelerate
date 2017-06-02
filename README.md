@@ -1,6 +1,6 @@
 # Accelerate v1.0
-## MyEAN boilerplate using angular-cli
-A MySQL, Express, Angular and Node implementation for developers in a hurry.
+## MyEAN boilerplate with angular-cli
+A MySQL, Express, Angular 4 and Node implementation for developers in a hurry.
 
 ## Prerequisites
 1) Node, Express, MySQL Database and angular-cli
@@ -11,9 +11,19 @@ A MySQL, Express, Angular and Node implementation for developers in a hurry.
 - [x] Can setup and install MySQL Database, Node, Express and angular-cli
 - [x] Javascript and Typescript literacy is preferable
 
+## Getting Started
+### The Database-Node-Express Back-end
+1) Install MySQL Database with user access, Node, Express and angular cli.
+2) Download the Accelerate v1.0 repository. The system consists of 2 parts.
+   The "Node" folder runs the back-end processes while the "Angular" folder 
+   contains segments of the front-end MVC models.
+3) Edit the configuration file for accelerate which can be found at
+   `./Node/app/settings.js`.
+   
+
 ## FAQ
 1) What the hell is this?
->It's a `set of codes`/`program` which will generate generic MVC models
+>It's a `program` which will generate generic MVC models
 for both the front-end and ~~backside~~ back-end of your system.
 
 
