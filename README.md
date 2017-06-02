@@ -9,6 +9,7 @@ A MySQL, Express, Angular and Node implementation for developers in a hurry.
 
 ## Experience level required
 - [x] Can setup and install MySQL Database, Node, Express and angular-cli
+- [x] Javascript and Typescript literacy is preferable
 
 ## FAQ
 1) What the hell is this?
