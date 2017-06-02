@@ -7,7 +7,7 @@ A MySQL, Express, Angular and Node implementation for developers in a hurry.
 2) ng2-file-upload (https://github.com/valor-software/ng2-file-upload)
 3) Your ideas, i.e. table schemas, column names, etc.
 
-##Experience level required
+## Experience level required
 -[x] Can setup and install MySQL Database, Node, Express and angular-cli
 
 ## FAQ
