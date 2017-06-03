@@ -1,5 +1,6 @@
 {
-  "name": "app1v0",
+  "name": "accelerate",
+  "version": "1.0.0",
   "author": "Allan Hoo Wan Hong",
   "scripts": {
     "start": "node ./app/app.js"
