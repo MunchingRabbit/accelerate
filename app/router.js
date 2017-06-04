@@ -48,7 +48,7 @@ module.exports = (function(){
 
 		file.readdirSync(settings.models).forEach(
 			function(filename){
-				let data = require(path.join(settings.models, filename)); 
+				let data = require(path.join(process.cwd(), settings.models, filename)); 
 				if(data.scaffold){ 
 					let model = new data.model();
 					let controller = data.scaffold.arbiter===true?
@@ -94,7 +94,7 @@ module.exports = (function(){
 					}
 					else{
 						for(let i in req.body.rm){
-							let filename = settings.client.storage.concat('/', req.body.rm[i]);
+							let filename = path.join(process.cwd(), settings.client.storage, req.body.rm[i]);
 							if (file.existsSync(filename)) { 
 								file.unlink(filename, function(err){
 									if((++dispose)>=req.body.rm.length){
@@ -140,16 +140,16 @@ module.exports = (function(){
 				let reply = [];
 				let err = false;
 				for(let i=req.files.length-1; !err && i>-1; i--){
-					if (file.existsSync(settings.client.storage.concat('/', req.files[i].originalname))) {
+					if (file.existsSync(path.join(process.cwd(), settings.client.storage, req.files[i].originalname))) {
 						file.unlinkSync(
-							settings.client.storage.concat('/', req.files[i].filename),
+							path.join(process.cwd(), settings.client.storage, req.files[i].filename),
 								function(){ err=true; }
 						);
 					}
 					else{
 						file.renameSync(
-							settings.client.storage.concat('/', req.files[i].filename), 
-							settings.client.storage.concat('/', req.files[i].originalname)
+							path.join(process.cwd(), settings.client.storage, req.files[i].filename), 
+							path.join(process.cwd(), settings.client.storage, req.files[i].originalname)
 						);
 						reply.push(req.files[i].originalname); 
 					}
