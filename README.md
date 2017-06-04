@@ -17,7 +17,7 @@ A MySQL, Express, Angular 4 and Node implementation for developers in a hurry.
    (npm packages coming soon...)
 2) Extract Accelerate into a folder \<your folder name\> of your 
    choice. 
-3) Navigate to the folder "\<your folder name\>" using  
+3) Navigate to the folder "\<your folder name\>" using
    the command line interface and type: `npm install` to install 
    the node dependencies.
 4) Create a new Angular 4 project inside the folder 
