@@ -37,7 +37,7 @@ module.exports = (function(){
 		/***********************************************************/
 		
 		/*********************MODELS FOLDER*************************/
-		models: 'E:/fakepath/models',//<Folder where all the nodejs models are kept>
+		models: './models',//<Folder where all the nodejs models are kept>
 		/***********************************************************/
 		/*******************SESSIONS SETTINGS***********************/
 		session:{
@@ -65,7 +65,7 @@ module.exports = (function(){
 			baseurl: '/accelerate/api/alice', //<Base url>
 			folder: 'E:/fakepath/angular/dist',//<Folder containing the angular web app>
 			fileurl: '/*/files/uploads',//<Url extension for file uploads>
-			storage:'E:/fakepath/data'//<Folder to store/retrive any file uploads/downloads>
+			storage:'./data'//<Folder to store/retrive any file uploads/downloads>
 		}
 		/***********************************************************/
 	}
