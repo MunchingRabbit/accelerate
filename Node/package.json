@@ -1,7 +1,12 @@
 {
   "name": "accelerate",
   "version": "1.0.0",
+  "license": "MIT",
   "author": "Allan Hoo Wan Hong",
+  "engines": {
+    "node": ">=6.3.0",
+    "npm": ">=3.10.8"
+  },
   "scripts": {
     "start": "node ./app/app.js"
   },
