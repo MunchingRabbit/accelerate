@@ -47,6 +47,7 @@ to suit any additional requirements.
    - [x] client.folder : the path to the `dist` folder generated
          by angular-cli after successfully building the web app
 12) Run "accelerate-setup.sql" in MySQL database.
+13) Type: `npm start` from "\<your folder name\>" to start the server.
 13) Sign-Up (uses passport-local) and start using Accelerate 
     to speed up your development cycles. :tada:
 
