@@ -1,8 +1,13 @@
 # Accelerate v1.0
 ![Accelerate](https://github.com/MunchingRabbit/accelerate/blob/master/accelerate.PNG)
 
-## MyEAN boilerplate with angular-cli
-A MySQL, Express, Angular 4 and Node implementation for developers in a hurry.
+## A MyEAN boilerplate with angular-cli
+Accelerate is a platform for developing and deploying REST-ful
+APIs as fast as the developers could think of them. It is
+built on MySQL, Express, Angular 4 and Node implementations, and 
+generates all the necessary models/controllers required for REST. 
+All generated models/controllers are also fully customizable
+to suit any additional requirements. 
 
 ## Prerequisites
 1) Node, Express, MySQL Database and angular-cli
