@@ -34,7 +34,7 @@ to suit any additional requirements.
 7) Edit the ".angular-cli.json" file to include the "w3css.css" files under 
    the scripts tag.
 8) Compile the Angular 4 project by typing :`ng build`
-9) Copy the contents of the folder "\<your folder name\>/Angular" found 
+9) Copy the contents of the folder "\<your folder name\>/Angular/src" found 
    in Accelerate into the "\<your webapp name\>/src/app" folder of your Angular 4
    web app. Replace all the files inside the "\<your webapp name\>/src/app"
    folder when prompted.
