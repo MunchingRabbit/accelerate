@@ -23,8 +23,8 @@ A MySQL, Express, Angular 4 and Node implementation for developers in a hurry.
    ng2-file-upload by typing: `npm install --save ng2-file-upload`
 6) Compile the Angular 4 project by typing :`ng build`
 7) Copy the contents of the folder [Angular] found in Accelerate
-   into the [\<your webapp name\>/src/app] folder of your Angular 4 web 
-   app. Replace all the files inside the [\<your webapp name\>/src/app] 
+   into the \<your webapp name\>/src/app folder of your Angular 4 web 
+   app. Replace all the files inside the \<your webapp name\>/src/app
    folder when prompted.
 8) Compile the Angular 4 project again by typing :`ng build`
 9)
