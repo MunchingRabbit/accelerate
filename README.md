@@ -62,4 +62,7 @@ some ~~twerking~~ tweaking it can also serve as an end-user system.
 
 ### Work in progress
 
-Page expected to complete 5th June 2017 00:00 UTC 
+~~Page expected to complete 5th June 2017 00:00 UTC ~~
+DELAY NOTICE:
+Slight delay due to unforseen circumstances; 
+*Page expected to complete 6th June 2017 00:00 UTC
