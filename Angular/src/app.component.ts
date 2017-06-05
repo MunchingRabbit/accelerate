@@ -40,7 +40,8 @@ export class AppComponent{
   public dropdownlist: Array<Object> = [
     //ADD MORE URL PATHS HERE
 	//**********************//
-	{url:this.buffer.getBaseUrl().concat('/utils'), title:'Builder'}
+	{url:this.buffer.getBaseUrl().concat('/utils'), title:'Builder'},
+	{url:this.buffer.getBaseUrl().concat('/tutorial'), title:'Tutorials'}
   ];
   
   constructor(private router: Router, private http: HttpService, private buffer: BufferService){
