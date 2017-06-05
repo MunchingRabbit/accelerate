@@ -42,6 +42,7 @@ import { ErrorComponent } from './error/error.component';
 import { SigninComponent } from './signin/signin.component';
 import { HomeComponent } from './home/home.component';
 import { BuilderComponent } from './builder/builder.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
 import { DataComponent } from './data/data.component';
 
 //ADD MORE COMPONENTS HERE
@@ -55,6 +56,7 @@ const navigator : Routes = [
   
   //ADD MORE URL PATHS HERE
   //*********************//
+  { path: prefix+'/tutorial', component: TutorialComponent },
   { path: '', component: HomeComponent },
   { path: '**', component: ErrorComponent }
 ];
