@@ -59,11 +59,3 @@ for both the front-end and ~~backside~~ back-end of your system.
 >Accelerate was designed for both developers and end-users in mind.
 It was built for ~~desperate students~~ developers off the shelf but with 
 some ~~twerking~~ tweaking it can also serve as an end-user system.
-
-### Work in progress
-
-~~Page expected to complete 5th June 2017 00:00 UTC~~
-
-DELAY NOTICE:
-Slight delay due to unforseen circumstances; 
-**Page expected to complete 6th June 2017 00:00 UTC
