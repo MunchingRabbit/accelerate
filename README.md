@@ -19,7 +19,7 @@ to suit any additional requirements.
 
 ## Getting Started
 1) Download the Accelerate v1.0 repository. 
-   (npm packages coming soon...)
+   (npm & docker packages coming soon...)
 2) Extract Accelerate into a folder "\<your folder name\>" of your 
    choice. 
 3) Navigate to the folder "\<your folder name\>" using
